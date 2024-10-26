@@ -6,3 +6,31 @@
 # The program should count of the number of correct and incorrect responses.  
 # (You could alternatively use another country and provinces, 
 # or countries of the world and capitals).
+
+
+import random
+
+# Dictionary of states and capitals
+states_capitals = {
+    "California": "Sacramento",
+    "Texas": "Austin",
+    "New York": "Albany",
+    "Florida": "Tallahassee",
+    "Illinois": "Springfield",
+}
+
+def quiz():
+    correct = 0
+    incorrect = 0
+    for state in random.sample(list(states_capitals.keys()), len(states_capitals)):
+        capital = input(f"What is the capital of {state}? ")
+        if capital.lower() == states_capitals[state].lower():
+            print("Correct!")
+            correct += 1
+        else:
+            print(f"Incorrect. The capital of {state} is {states_capitals[state]}.")
+            incorrect += 1
+    print(f"\nResults: {correct} correct, {incorrect} incorrect.")
+
+# Start the quiz
+quiz()
