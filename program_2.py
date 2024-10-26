@@ -5,19 +5,20 @@
 # and the first word starts with an uppercase.  
 # For example the string "StopAndSmellTheRoses" would be converted to "Stop and smell the roses."
 
-# Start your changes on line 13
 
-def word_separator(sentence):
 
-    new_sentence = ""
-    #    Add your logic here
+def separate_words(camel_case_str):
+    result = camel_case_str[0]  # Start with the first character
+    for char in camel_case_str[1:]:
+        # If char is uppercase, add a space before it and make it lowercase
+        if char.isupper():
+            result += ' ' + char.lower()
+        else:
+            result += char
+    # Capitalize the first word in the result
+    return result.capitalize()
 
-    return new_sentence.strip()
-
-# Example usage
-
-sentence = "StopAndSmellTheRoses"
-
-new_sentence = word_separator(sentence)
-
-print(new_sentence)
+# Input from user
+sentence = input("Enter a CamelCase sentence: ")
+# Display separated words
+print("Separated sentence:", separate_words(sentence))
