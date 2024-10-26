@@ -1,0 +1,8 @@
+1. Initialize an empty dictionary for courses.
+2. While the user has more courses to add:
+    a. Prompt the user to enter a course ID.
+    b. Prompt the user to enter the course name.
+    c. Store the course ID and name as a key-value pair in the dictionary.
+3. Ask the user to input a subject prefix (e.g., "COS").
+4. For each course in the dictionary:
+    a. If the course ID starts with the user-provided subject prefix, display the course ID and name.
